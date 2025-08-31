@@ -28,7 +28,7 @@ env_path = os.path.dirname(os.path.abspath(__file__))
 load_dotenv(os.path.join(env_path, ".env"))
 
 intents = discord.Intents.all()
-activity = discord.Activity(type=discord.ActivityType.watching, name="DaggerNodes host now!")
+activity = discord.Activity(type=discord.ActivityType.watching, name="/help")
 client = commands.Bot(command_prefix='dn!', help_command=None, activity=activity, intents=intents)
 
 @client.event
