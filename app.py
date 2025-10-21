@@ -32,7 +32,7 @@ load_dotenv(os.path.join(env_path, ".env"))
 
 intents = discord.Intents.all()
 activity = discord.Activity(type=discord.ActivityType.watching, name="/help")
-client = commands.Bot(command_prefix='dn!', help_command=None, activity=activity, intents=intents)
+client = commands.Bot(command_prefix='n!', help_command=None, activity=activity, intents=intents)
 
 @client.event
 async def on_ready():
