@@ -11,7 +11,7 @@ class General(commands.Cog):
     
     @commands.hybrid_command(name="help", description="help command.")
     async def help(self, ctx):
-        help = discord.Embed(title="List of all commands", description="Supported types: **message** & **application commands**\n\n__General__:\ndn!help\ndn!ping", colour=discord.Colour.orange())
+        help = discord.Embed(title="Helper Menu", description="**Command types**:\n- message\n- application commands\n\n**General**:\n- dn!help\n- dn!ping", colour=discord.Colour.blue())
         help.set_footer(text=f"requested by {ctx.author.name}", icon_url=ctx.author.display_avatar.url)
         await ctx.send(embed=help)
 
