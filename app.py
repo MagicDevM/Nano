@@ -40,8 +40,9 @@ async def on_ready():
     synced_commands = await client.tree.sync()
     logger.info(f'Successfully synced {len(synced_commands)} commands.')
   except Exception as error:
-    pass
-    logger.info("{0.user} bot is now online".format(client))
+      logger.warn("An error occured:" + error)
+      pass
+  logger.info("{0.user} bot is now online".format(client))
     
 async def load_cogs():
     for root, dirs, files in os.walk("cogs"):
