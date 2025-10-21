@@ -32,7 +32,7 @@ activity = discord.Activity(type=discord.ActivityType.watching, name="/help")
 client = commands.Bot(command_prefix='dn!', help_command=None, activity=activity, intents=intents)
 
 @client.event
-async def on_ready:
+async def on_ready():
   try:
     synced_commands = await client.tree.sync()
     logger.info(f'Successfully synced {len(synced_commands)} commands.')
