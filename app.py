@@ -36,7 +36,7 @@ async def on_ready():
   try:
     synced_commands = await client.tree.sync()
     logger.info(f'Successfully synced {len(synced_commands)} commands.')
- except Exception as error:
+  except Exception as error:
     pass
     logger.info("{0.user} bot is now online".format(client))
     
