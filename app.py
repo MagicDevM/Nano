@@ -1,6 +1,8 @@
 import discord
 import asyncio
 import sys
+import os
+from discord.ext import commands
 from loguru import logger
 from dotenv import load_dotenv
 
