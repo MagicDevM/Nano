@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-class General(commands.Cog):
+class System(commands.Cog):
     def __init__(self, client):
         self.client = client
 
@@ -16,4 +16,4 @@ class General(commands.Cog):
         await ctx.send(embed=help)
 
 async def setup(client):
-    await client.add_cog(General(client))
+    await client.add_cog(System(client))
