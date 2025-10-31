@@ -13,7 +13,7 @@ class ErrorHandling(commands.Cog):
             elif isinstance(error, commands.CommandNotFound):
                 return
             elif isinstance(error, commands.BadArgument):
-                await ctx.send("One of your arguments are invalid.")
+                await ctx.send("Some of your arguments are invalid.")
             elif isinstance(error, commands.TooManyArguments):
                 await ctx.send("Too Many arguments provided.")
             elif isinstance(error, commands.MissingPermissions):
