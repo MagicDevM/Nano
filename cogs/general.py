@@ -27,7 +27,6 @@ class General(commands.Cog):
       emoji_limit = guild.emoji_limit
       stickers = len(guild.stickers)
       sticker_limit = guild.sticker_limit
-      invites = len(guild.invites)
       vanity_link = guild.vanity_url
       id = guild.id
       name = guild.name
@@ -37,11 +36,13 @@ class General(commands.Cog):
       boost_level = guild.premium_tier
       bans = len([entry.user.id async for entry in guild.bans()])
       
-      embed = discord.Embed(title=f"{guild.name}'s Info", description=f"- Basic Info\n**Name**: {name}\n**Description**: {description}\n**Id**: {id}\n**Owner**: {owner.name}\n**Creation Date**: {creation_date.day}/{creation_date.month}/{creation_date.year}\n**Members**: {members}\n\n- Channels & Categories\n**Total Channels**: {total_channels}\n**Total Channels & Categories: {total_channels_and_categories}\n**Text Channels**: {text_channels}\n**Voice Channels**: {voice_channels}\n**Forum Channels**: {forum_channels}\n**Stage Channels**: {stage_channels}\n**Categories**: {categories}\n\n- Miscellaneous\n**Threads**: {threads}\n**Invites**: {invites}\n**Roles**: {roles}\n**Emojis**: {emojis}/{emoji_limit}\n**Stickers**: {stickers}/{sticker_limit}\n**Booster Level**: {boost_level}\n**Verfication Intensity**: {verification_level}\n**Vanity Link**: {vanity_link}\n**Total Bans**: {bans}", color=discord.Colour.orange())
+      embed = discord.Embed(title=f"{guild.name}'s Info", description=f"- Basic Info\n**Name**: {name}\n**Description**: {description}\n**Id**: {id}\n**Owner**: {owner.name}\n**Creation Date**: {creation_date.day}/{creation_date.month}/{creation_date.year}\n**Members**: {members}\n\n- Channels & Categories\n**Total Channels**: {total_channels}\n**Total Channels & Categories**: {total_channels_and_categories}\n**Text Channels**: {text_channels}\n**Voice Channels**: {voice_channels}\n**Forum Channels**: {forum_channels}\n**Stage Channels**: {stage_channels}\n**Categories**: {categories}\n\n- Miscellaneous\n**Threads**: {threads}\n**Roles**: {roles}\n**Emojis**: {emojis}/{emoji_limit}\n**Stickers**: {stickers}/{sticker_limit}\n**Booster Level**: {boost_level}\n**Verfication Intensity**: {verification_level}\n**Vanity Link**: {vanity_link}\n**Total Bans**: {bans}", color=discord.Colour.orange())
       embed.set_thumbnail(url=icon)
       embed.set_image(url=banner)
       embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.display_avatar)
       await ctx.send(embed=embed)
+    
+      
 
 async def setup(client):
     await client.add_cog(General(client))
